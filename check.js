@@ -1,0 +1,1 @@
+const fs = require('fs'); const html = fs.readFileSync('collections.html', 'utf8'); const grid = html.substring(html.indexOf('<div class="grid'), html.indexOf('<!-- Pagination -->')); const aOpen = (grid.match(/<a /g)||[]).length; const aClose = (grid.match(/<\/a>/g)||[]).length; console.log(aOpen === aClose ? 'Balanced' : 'Unbalanced:', aOpen, aClose);
